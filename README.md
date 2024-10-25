@@ -1,6 +1,6 @@
 # ee-25-test
 
-Testing EE builds against the AAP 2.5 ee-minimal base image.  This repo uses git-lfs for storing large files.
+Reproducing issues with EE builds against the AAP 2.5 ee-minimal base image.  This repo uses git-lfs for storing large files.
 
 Before running the `build-ee.sh` script, set your Automation Hub token in the following environment variables:
 ```
