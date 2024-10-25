@@ -1,0 +1,71 @@
+# these collections have been tested against the base image
+# registry.redhat.io/ansible-automation-platform-25/ee-minimal-rhel9:latest
+# and the following results have been found
+---
+collections:
+  # these collections all install properly
+  - name: ansible.controller
+    version: ">=4.6.0"
+  - name: ansible.hub
+    version: ">=1.0.0"
+  - name: ansible.platform
+    version: ">=2.5.0"
+  - name: infra.ah_configuration
+    version: ">=2.0.6"
+  - name: infra.controller_configuration
+    version: ">=2.11.0"
+  - name: ansible.posix
+    version: ">=1.5.4"
+  - name: community.general
+    version: ">=8.0.0"
+  - name: containers.podman
+    version: ">=1.12.1"
+  - name: redhat.insights
+    version: ">=1.2.2"
+  - name: ansible.windows
+    version: ">=2.3.0"
+  - name: chocolatey.chocolatey
+    version: ">=1.5.1"
+  - name: community.windows
+    version: ">=2.2.0"
+  - name: amazon.aws
+    version: ">=7.5.0"
+  - name: netapp.ontap
+    version: ">=22.12.0"
+
+  # these work, but only when the openshift-clients RPM is
+  # installed during the prepend_base stage
+  - name: kubernetes.core
+    version: ">=4.0.0"
+  - name: redhat.openshift
+    version: ">=3.0.1"
+  - name: redhat.openshift_virtualization
+    version: ">=1.4.0"
+
+  # these fail due to bindep requiremenets pulling in the python 3.9 RPM
+  # and its dependencies
+  #
+  # - name: redhat.rhel_system_roles
+  #   version: ">=1.23.0"
+  # - name: redhat.satellite
+  #   version: ">=4.0.0"
+  # - name: ansible.netcommon
+  #   version: ">=6.0.0"
+  # - name: cisco.ios
+  #   version: ">=7.0.0"
+  # - name: cisco.iosxr
+  #   version: ">=8.0.0"
+  # - name: cisco.nxos
+  #   version: ">=7.0.0"
+
+  # this fails trying to install python-systemd
+  #
+  # - name: ansible.eda
+  #   version: ">=2.1.0"
+
+  # this fails trying to install and build python netifaces
+  #
+  # - name: infoblox.nios_modules
+  #   version: ">=1.6.1"
+
+...
